@@ -37,7 +37,7 @@ class _HomePageState extends ConsumerState<HomePage> {
       ),
       _ => Scaffold(
         appBar: AppBar(title: const Text('Home Page')),
-        body: const Center(child: CircularProgressIndicator()),
+        body: const Center(child: CircularProgressIndicator.adaptive()),
       ),
     };
   }
