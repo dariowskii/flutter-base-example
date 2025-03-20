@@ -77,3 +77,26 @@ class _AuthRepository implements AuthRepository {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// **************************************************************************
+// RiverpodGenerator
+// **************************************************************************
+
+String _$authHash() => r'bbc8e76cbb0a3d191155c0d8a66b668f42d0e0f2';
+
+/// See also [auth].
+@ProviderFor(auth)
+final authProvider = AutoDisposeProvider<AuthRepository>.internal(
+  auth,
+  name: r'authProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$authHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+typedef AuthRef = AutoDisposeProviderRef<AuthRepository>;
+// ignore_for_file: type=lint
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

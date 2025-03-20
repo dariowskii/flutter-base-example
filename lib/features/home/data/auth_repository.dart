@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_base_example/features/home/domain/person.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'auth_repository.g.dart';
@@ -25,4 +27,9 @@ class MockAuthRepository implements AuthRepository {
       const Person(firstName: 'Jane', lastName: 'Doe', age: 25),
     ], Response(requestOptions: RequestOptions(path: '/auth/users')));
   }
+}
+
+@riverpod
+AuthRepository auth(Ref ref) {
+  return MockAuthRepository(Dio());
 }
